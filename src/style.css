@@ -28,7 +28,7 @@ body {
 }
 
 .overlay {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -61,12 +61,16 @@ body {
 }
 
 .hero-main-logo {
-  width: 100%;
-  height: 100vh;
+  width: auto;
+  height: 28vh;
+  max-width: 80vw;
   position: absolute;
-  inset: 0;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
   z-index: 1;
-  object-fit: cover;
+  object-fit: contain;
+  pointer-events: none;
 }
 
 .hero-text-logo-container {
@@ -198,3 +202,653 @@ body {
     font-size: 3.5rem;
   }
 }
+
+/* ==========================================================================
+   Hero Section Layout
+   ========================================================================== */
+.hero-section {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   Stacking Gallery Styles
+   ========================================================================== */
+.gallery-section {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgb(35, 18, 48) 0%,
+    rgb(22, 14, 30) 40%,
+    rgb(12, 10, 16) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.5rem;
+}
+
+.gallery-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 900;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 2.5rem;
+  background: linear-gradient(90deg, #ffb0c4 0%, #ff4d82 50%, #bd39a3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 35px rgba(255, 77, 130, 0.4);
+  z-index: 5;
+  text-align: center;
+}
+
+.stack-container {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  height: 52vh;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1500px;
+  z-index: 2;
+  margin-bottom: 2rem;
+}
+
+.stack-card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  will-change: transform, opacity;
+  transform-style: preserve-3d;
+  transition: filter 0.3s ease;
+  pointer-events: none; /* Let animations guide the hover behavior */
+}
+
+/* Enable pointer events on card inner for interactions */
+.stack-card .card-inner {
+  pointer-events: auto;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  padding: 12px 12px 42px 12px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 4px 10px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+}
+
+/* Off-white variations for realism */
+.stack-card:nth-child(3n) .card-inner {
+  background: #faf8f5;
+}
+
+.stack-card:nth-child(3n+1) .card-inner {
+  background: #f7f6f2;
+}
+
+.card-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  background: #050505;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+}
+
+.card-caption {
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #1a1a1a;
+  text-align: center;
+  margin-top: 10px;
+  letter-spacing: 0.02em;
+  user-select: none;
+  line-height: 1.1;
+}
+
+/* Subtle Polaroid photo textures */
+.stack-card .card-inner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 0.03) 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Media Card adjustments */
+.card-video .card-inner {
+  padding-bottom: 42px;
+}
+
+/* Hover effects when the stack is formed */
+.stack-card .card-inner:hover {
+  transform: scale(1.04) translateY(-10px) rotate(0deg) !important;
+  box-shadow: 0 25px 50px rgba(255, 77, 130, 0.3), 0 10px 20px rgba(0, 0, 0, 0.4);
+  z-index: 100 !important;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .gallery-title {
+    font-size: 3.5rem;
+    margin-bottom: 3.5rem;
+  }
+  
+  .stack-container {
+    max-width: 520px;
+    height: 56vh;
+    min-height: 420px;
+  }
+  
+  .card-caption {
+    font-size: 2rem;
+    margin-top: 12px;
+  }
+  
+  .stack-card .card-inner {
+    padding: 16px 16px 54px 16px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .stack-container {
+    max-width: 580px;
+    height: 60vh;
+    min-height: 480px;
+  }
+}
+
+/* ==========================================================================
+   Highlight Section Styles
+   ========================================================================== */
+.highlight-section {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgb(20, 12, 28) 0%,
+    rgb(10, 8, 16) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 1.5rem;
+}
+
+.highlight-image-container {
+  width: 100%;
+  max-width: 900px;
+  background: #ffffff;
+  padding: 14px 14px 54px 14px;
+  border-radius: 16px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7), 0 0 50px rgba(255, 77, 130, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  will-change: transform, opacity;
+}
+
+.highlight-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.highlight-caption {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 900;
+  font-size: 1.6rem;
+  color: #ffb0c4;
+  text-align: center;
+  margin-top: 18px;
+  letter-spacing: 0.15em;
+  text-shadow: 0 0 10px rgba(255, 77, 130, 0.5);
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .highlight-image-container {
+    padding: 18px 18px 68px 18px;
+  }
+  .highlight-caption {
+    font-size: 2.2rem;
+    margin-top: 22px;
+  }
+}
+
+/* ==========================================================================
+   pricedown Custom Font
+   ========================================================================== */
+@font-face {
+  font-family: "pricedown";
+  src: url("/pricedown.otf") format("opentype");
+}
+
+.font-pricedown {
+  font-family: "pricedown", sans-serif !important;
+}
+
+.font-helvetica {
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+/* ==========================================================================
+   SVG Mask Loading Intro Overlay
+   ========================================================================== */
+.svg-mask-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1000;
+  overflow: hidden;
+  background-color: #000000;
+}
+
+.svg-mask-overlay svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vi-mask-group {
+  transform-origin: 50% 50%;
+}
+
+/* ==========================================================================
+   Main Landing Section (Vite + React GTA VI clone translation)
+   ========================================================================== */
+.main-landing-wrapper {
+  width: 100%;
+  position: relative;
+  transform-origin: 50% 50%;
+  transform: scale(1.7) rotate(-10deg); /* Initial animation offset */
+  will-change: transform;
+  visibility: hidden; /* Controlled by script.js after mask removes */
+  background-color: #000000;
+}
+
+.landing-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #000000;
+  user-select: none;
+}
+
+/* Navbar Branding */
+.landing-navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  padding: 1.5rem;
+}
+
+.landing-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.landing-logo-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.logo-line {
+  height: 8px;
+  background-color: #ffffff;
+  border-radius: 1px;
+}
+
+.line-long {
+  width: 50px;
+}
+
+.line-medium {
+  width: 32px;
+}
+
+.line-short {
+  width: 18px;
+}
+
+.rockstar-text {
+  font-family: 'pricedown', sans-serif;
+  font-size: 2.2rem;
+  margin-top: -6px;
+  line-height: 1;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+  font-weight: normal;
+}
+
+/* Parallax Image Container */
+.landing-images-div {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.parallax-layer {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.sky-layer {
+  transform: scale(1.5) rotate(-20deg);
+  transform-origin: 50% 50%;
+  will-change: transform;
+  z-index: 0;
+}
+
+.bg-layer {
+  transform: scale(1.8) rotate(-3deg);
+  transform-origin: 50% 50%;
+  will-change: transform;
+  z-index: 1;
+}
+
+.character-layer {
+  position: absolute;
+  bottom: -150%;
+  left: 50%;
+  transform: translate(-50%, 0) scale(3) rotate(-20deg);
+  transform-origin: 50% 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  will-change: transform;
+  z-index: 3;
+}
+
+/* Giant GTA Title Text */
+.gta-logo-text {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, 0) scale(1.4) rotate(-10deg);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  color: #ffffff;
+  z-index: 2;
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+
+.gta-logo-text h1 {
+  font-family: 'pricedown', sans-serif;
+  font-size: 6.5rem;
+  line-height: 0.72;
+  text-shadow: 0 8px 30px rgba(0, 0, 0, 0.9);
+  text-transform: lowercase;
+  margin: 0;
+  font-weight: normal;
+}
+
+.text-grand {
+  margin-left: -4rem !important;
+}
+
+.text-theft {
+  margin-left: 2rem !important;
+}
+
+.text-auto {
+  margin-left: -4rem !important;
+}
+
+/* Landing Bottom Bar */
+.landing-bottom-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2.5rem 1.5rem;
+  color: #ffffff;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 100%);
+  z-index: 4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.scroll-down-prompt {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.scroll-down-prompt i {
+  font-size: 1.8rem;
+  animation: bounceDown 1s infinite alternate ease-in-out;
+}
+
+@keyframes bounceDown {
+  from { transform: translateY(0); }
+  to { transform: translateY(8px); }
+}
+
+.scroll-down-text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.ps5-logo-icon {
+  position: absolute;
+  height: 38px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+}
+
+/* ==========================================================================
+   Still Running, Not Hunting Section
+   ========================================================================== */
+.not-hunting-section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+  padding: 4rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.not-hunting-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1100px;
+  color: #ffffff;
+  gap: 3rem;
+  align-items: center;
+}
+
+.not-hunting-image-side {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.not-hunting-photo {
+  max-width: 85%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.not-hunting-content-side {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.not-hunting-title {
+  font-family: 'pricedown', sans-serif;
+  font-size: 3.5rem;
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  margin: 0;
+  color: #ffffff;
+  font-weight: normal;
+}
+
+.not-hunting-text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: #cccccc;
+  margin-top: 1.25rem;
+}
+
+.download-button {
+  align-self: flex-start;
+  background-color: #eab308;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #000000;
+  font-family: 'pricedown', sans-serif;
+  font-size: 1.5rem;
+  padding: 0.6rem 2.2rem;
+  margin-top: 2rem;
+  border-radius: 4px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  letter-spacing: 0.05em;
+  font-weight: normal;
+}
+
+.download-button:hover {
+  background-color: #ca8a04;
+  transform: scale(1.04);
+}
+
+.download-button:active {
+  transform: scale(0.97);
+}
+
+/* Responsive Overrides */
+@media (min-width: 768px) {
+  .landing-navbar {
+    padding: 2.5rem;
+  }
+  .landing-logo {
+    gap: 1.5rem;
+  }
+  .landing-logo-lines {
+    gap: 5px;
+  }
+  .logo-line {
+    height: 10px;
+  }
+  .line-long { width: 60px; }
+  .line-medium { width: 38px; }
+  .line-short { width: 22px; }
+  .rockstar-text { font-size: 2.8rem; }
+  
+  .gta-logo-text { top: 8%; }
+  .gta-logo-text h1 { font-size: 9.5rem; }
+  .text-grand { margin-left: -7rem !important; }
+  .text-theft { margin-left: 4rem !important; }
+  .text-auto { margin-left: -7rem !important; }
+  
+  .landing-bottom-bar {
+    padding: 3.5rem 2.5rem;
+  }
+  .scroll-down-text {
+    font-size: 1.05rem;
+  }
+  .ps5-logo-icon {
+    height: 52px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gta-logo-text h1 { font-size: 11.5rem; }
+  .text-grand { margin-left: -10rem !important; }
+  .text-theft { margin-left: 7rem !important; }
+  .text-auto { margin-left: -10rem !important; }
+  
+  .not-hunting-container {
+    flex-direction: row;
+    justify-content: space-between;
+    height: 80vh;
+  }
+  .not-hunting-image-side {
+    width: 50%;
+    height: 100%;
+  }
+  .not-hunting-photo {
+    max-width: 90%;
+    transform: scale(1.1);
+  }
+  .not-hunting-content-side {
+    width: 42%;
+  }
+  .not-hunting-title {
+    font-size: 5.5rem;
+  }
+  .not-hunting-text {
+    font-size: 1.15rem;
+  }
+  .download-button {
+    font-size: 1.8rem;
+    padding: 0.75rem 2.5rem;
+  }
+}
+
+

@@ -3,68 +3,321 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GTA VI Website</title>
+    <title>GTA VI | Leonida Chronicles</title>
+    <!-- Google Fonts: Outfit for headings, Caveat for handwritten captions -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Remix Icons Link for icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="./src/style.css" />
   </head>
   <body>
+    <!-- SVG Mask Intro Overlay (fixed overlay) -->
+    <div id="vi-mask-overlay" class="svg-mask-overlay">
+      <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <mask id="viMask">
+            <rect width="100%" height="100%" fill="black" />
+            <g class="vi-mask-group">
+              <text
+                x="50%"
+                y="50%"
+                fontSize="250"
+                textAnchor="middle"
+                fill="white"
+                dominantBaseline="middle"
+                fontFamily="Arial Black"
+              >
+                VI
+              </text>
+            </g>
+          </mask>
+        </defs>
+        <image
+          href="/json.jpg"
+          width="100%"
+          height="100%"
+          preserveAspectRatio="xMidYMid slice"
+          mask="url(#viMask)"
+        />
+      </svg>
+    </div>
+
     <div class="container">
-      <div class="overlay"></div>
-      <div class="hero-1-container">
-        <div class="hero-main-container">
-          <img
-            class="hero-main-logo"
-            draggable="false"
-            src="/gta_logo_cut.webp"
-            alt="gta logo"
-          />
-          <img
-            class="hero-main-image"
-            draggable="false"
-            src="/gta_hero.webp"
-            alt="gta logo"
-          />
-        </div>
-        <div class="hero-text-logo-container">
-          <div class="hero-text-logo"></div>
-          <div>
-            <h3 class="hero-text">
-              Coming<br />
-              May 26<br />
-              2026
-            </h3>
+      <!-- Main Landing Page Wrapper (from React GTA VI Clone) -->
+      <div class="main-landing-wrapper">
+        <!-- Parallax Hero Landing Screen -->
+        <div class="landing-section">
+          <div class="landing-navbar">
+            <div class="landing-logo">
+              <div class="landing-logo-lines">
+                <div class="logo-line line-long"></div>
+                <div class="logo-line line-medium"></div>
+                <div class="logo-line line-short"></div>
+              </div>
+              <h3 class="rockstar-text">Rockstar</h3>
+            </div>
+          </div>
+
+          <div class="landing-images-div">
+            <img class="parallax-layer sky-layer" src="/sky.png" alt="sky" />
+            <img class="parallax-layer bg-layer" src="/bg.png" alt="background" />
+            <div class="gta-logo-text">
+              <h1 class="text-grand">grand</h1>
+              <h1 class="text-theft">theft</h1>
+              <h1 class="text-auto">auto</h1>
+            </div>
+            <img class="parallax-layer character-layer" src="/girlbg.png" alt="character" />
+          </div>
+
+          <div class="landing-bottom-bar">
+            <div class="scroll-down-prompt">
+              <i class="ri-arrow-down-line"></i>
+              <h3 class="scroll-down-text">Scroll Down</h3>
+            </div>
+            <img class="ps5-logo-icon" src="/ps5.png" alt="PS5" />
           </div>
         </div>
+
+        <!-- Still Running, Not Hunting Intro Section -->
+        <section class="not-hunting-section">
+          <div class="not-hunting-container">
+            <div class="not-hunting-image-side">
+              <img class="not-hunting-photo" src="/imag.png" alt="still running" />
+            </div>
+            <div class="not-hunting-content-side">
+              <h1 class="not-hunting-title">Still Running,</h1>
+              <h1 class="not-hunting-title">Not Hunting</h1>
+              <p class="not-hunting-text font-helvetica">
+                Jason and Lucia have always known the deck is stacked against them.
+                But when an easy score goes wrong, they find themselves on the darkest
+                side of the sunniest place in America, in the middle of a criminal
+                conspiracy stretching across the state of Leonida.
+              </p>
+              <p class="not-hunting-text font-helvetica">
+                Forced to rely on each other more than ever if they want to make it out alive,
+                they must fight for survival in a world of corruption, vice, and danger.
+              </p>
+              <p class="not-hunting-text font-helvetica">
+                Experience the next chapter of Leonida's criminal underworld. Pre-orders are opening soon.
+              </p>
+              <button class="download-button font-pricedown">Download Now</button>
+            </div>
+          </div>
+        </section>
       </div>
-      <div class="hero-2-container">
-        <h3>Vice City, USA.</h3>
-        <p>
-          Jason and Lucia have always known the deck is stacked against them.
-          But when an easy score goes wrong, they find themselves on the darkest
-          side of the sunniest place in America, in the middle of a criminal
-          conspiracy stretching across the state of Leonida — forced to rely on
-          each other more than ever if they want to make it out alive.
-        </p>
-      </div>
-      <!-- Scroll Indicator -->
-      <div class="scroll-indicator">
-        <svg
-          width="34"
-          height="14"
-          viewBox="0 0 34 14"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-          class="_1smfa210"
-          focusable="false"
-        >
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M33.5609 1.54346C34.0381 2.5875 33.6881 3.87821 32.7791 4.42633L17.0387 13.9181L1.48663 4.42115C0.580153 3.86761 0.235986 2.57483 0.717909 1.53365C1.19983 0.492464 2.32535 0.097152 3.23182 0.650692L17.0497 9.08858L31.051 0.64551C31.96 0.0973872 33.0837 0.499411 33.5609 1.54346Z"
-            fill="currentColor"
-          ></path>
-        </svg>
-      </div>
+
+      <!-- Hero Section (pinned during intro animation) -->
+      <section class="hero-section">
+        <div class="overlay"></div>
+        <div class="hero-1-container">
+          <div class="hero-main-container">
+            <img
+              class="hero-main-logo"
+              draggable="false"
+              src="/gta_logo_cut.webp"
+              alt="gta logo"
+            />
+            <video
+              class="hero-main-video"
+              draggable="false"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="auto"
+            >
+              <source src="/Jason_Duval_Video_Clip.mp4" type="video/mp4" />
+            </video>
+          </div>
+          
+          <div class="hero-text-logo-container">
+            <div class="hero-text-logo"></div>
+            <div>
+              <h3 class="hero-text">
+                Pre-order<br />
+                June 25<br />
+                2026
+              </h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-2-container">
+          <h3>Vice City, USA.</h3>
+          <p>
+            Jason and Lucia have always known the deck is stacked against them.
+            But when an easy score goes wrong, they find themselves on the darkest
+            side of the sunniest place in America, in the middle of a criminal
+            conspiracy stretching across the state of Leonida — forced to rely on
+            each other more than ever if they want to make it out alive.
+          </p>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+          <svg
+            width="34"
+            height="14"
+            viewBox="0 0 34 14"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            class="_1smfa210"
+            focusable="false"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M33.5609 1.54346C34.0381 2.5875 33.6881 3.87821 32.7791 4.42633L17.0387 13.9181L1.48663 4.42115C0.580153 3.86761 0.235986 2.57483 0.717909 1.53365C1.19983 0.492464 2.32535 0.097152 3.23182 0.650692L17.0497 9.08858L31.051 0.64551C31.96 0.0973872 33.0837 0.499411 33.5609 1.54346Z"
+              fill="currentColor"
+            ></path>
+          </svg>
+        </div>
+      </section>
+
+      <!-- Stacking Gallery Section (pinned on scroll) -->
+      <section class="gallery-section">
+        <h2 class="gallery-title">Leonida Chronicles</h2>
+        
+        <div class="stack-container">
+          <!-- Card 1 (Video) -->
+          <div class="stack-card card-video">
+            <div class="card-inner">
+              <video
+                class="card-media"
+                draggable="false"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="auto"
+              >
+                <source src="/Lucia_Caminos_Video_Clip.mp4" type="video/mp4" />
+              </video>
+              <div class="card-caption">Lucia - Leonida State Correctional</div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="stack-card">
+            <div class="card-inner">
+              <img
+                class="card-media"
+                draggable="false"
+                src="./public/Jason_Duval_06.jpg"
+                alt="Jason"
+              />
+              <div class="card-caption">Jason - Street Heat</div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="stack-card">
+            <div class="card-inner">
+              <img
+                class="card-media"
+                draggable="false"
+                src="./public/Leonida_Keys_01.jpg"
+                alt="Leonida Keys"
+              />
+              <div class="card-caption">Leonida Keys - Golden Hour</div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="stack-card">
+            <div class="card-inner">
+              <img
+                class="card-media"
+                draggable="false"
+                src="./public/Leonida_Keys_04.jpg"
+                alt="Leonida Highway"
+              />
+              <div class="card-caption">Cruising the Highway</div>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="stack-card">
+            <div class="card-inner">
+              <img
+                class="card-media"
+                draggable="false"
+                src="./public/Mount_Kalaga_National_Park_01.jpg"
+                alt="Mount Kalaga"
+              />
+              <div class="card-caption">Mount Kalaga National Park</div>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="stack-card">
+            <div class="card-inner">
+              <img
+                class="card-media"
+                draggable="false"
+                src="./public/raul-bautista.png"
+                alt="Raul Bautista"
+              />
+              <div class="card-caption">Raul Bautista - Syndicate Boss</div>
+            </div>
+          </div>
+
+          <!-- Card 7 -->
+          <div class="stack-card">
+            <div class="card-inner">
+              <img
+                class="card-media"
+                draggable="false"
+                src="./public/Raul_Bautista_03.jpg"
+                alt="A Risky Deal"
+              />
+              <div class="card-caption">A Risky Deal</div>
+            </div>
+          </div>
+
+          <!-- Card 8 -->
+          <div class="stack-card">
+            <div class="card-inner">
+              <img
+                class="card-media"
+                draggable="false"
+                src="./public/Lucia_Caminos_03.jpg"
+                alt="Lucia Caminos"
+              />
+              <div class="card-caption">Lucia - Eye on the Prize</div>
+            </div>
+          </div>
+
+          <!-- Card 9 -->
+          <div class="stack-card">
+            <div class="card-inner">
+              <img
+                class="card-media"
+                draggable="false"
+                src="./public/Lucia ♡ Jason.jpg"
+                alt="Lucia & Jason"
+              />
+              <div class="card-caption">Trust - Jason & Lucia</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Highlight Section (separate image outside the stack) -->
+      <section class="highlight-section">
+        <div class="highlight-image-container">
+          <img
+            class="highlight-image"
+            draggable="false"
+            src="./public/Jason_Lucia_03_With_Logos_landscape.jpg"
+            alt="Vice City Highlight"
+          />
+          <div class="highlight-caption">VICE CITY: THE DECK IS STACKED</div>
+        </div>
+      </section>
     </div>
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
