@@ -71,7 +71,7 @@ function revealLandingPage() {
     ease: "expo.inOut",
   }, "<");
 
-  // CORRECTED: Character animation - bring it to center properly
+  // CORRECTED: Character animation - bring bike from off-screen to bottom
   revealTl.to(".character-layer", {
     scale: 1,
     x: 0,

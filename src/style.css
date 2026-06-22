@@ -9,22 +9,21 @@ body {
   width: 100vw;
   min-height: 100svh;
   overflow-x: hidden;
-  overflow: hidden; /* prevent horizontal scrolling initially */
+  overflow: hidden;
+  /* prevent horizontal scrolling initially */
 }
 
 .container {
   min-height: 100svh;
   position: relative;
-  background: linear-gradient(
-    223.17deg,
-    rgb(28, 24, 41) 0%,
-    rgb(27, 24, 40) 8.61%,
-    rgb(25, 23, 36) 17.21%,
-    rgb(22, 21, 32) 25.82%,
-    rgb(20, 19, 28) 34.42%,
-    rgb(18, 18, 24) 43.03%,
-    rgb(17, 17, 23) 51.63%
-  );
+  background: linear-gradient(223.17deg,
+      rgb(28, 24, 41) 0%,
+      rgb(27, 24, 40) 8.61%,
+      rgb(25, 23, 36) 17.21%,
+      rgb(22, 21, 32) 25.82%,
+      rgb(20, 19, 28) 34.42%,
+      rgb(18, 18, 24) 43.03%,
+      rgb(17, 17, 23) 51.63%);
 }
 
 .overlay {
@@ -126,13 +125,11 @@ body {
   color: #ffb0c4;
   text-align: center;
   text-transform: uppercase;
-  background-image: radial-gradient(
-    circle at 50% 200vh,
-    rgba(255, 214, 135, 0) 0,
-    rgba(157, 47, 106, 0.5) 90vh,
-    rgba(157, 47, 106, 0.8) 120vh,
-    rgba(32, 31, 66, 0) 150vh
-  );
+  background-image: radial-gradient(circle at 50% 200vh,
+      rgba(255, 214, 135, 0) 0,
+      rgba(157, 47, 106, 0.5) 90vh,
+      rgba(157, 47, 106, 0.8) 120vh,
+      rgba(32, 31, 66, 0) 150vh);
   -webkit-text-fill-color: transparent;
   font-size: 4.5rem;
   background-clip: text;
@@ -149,13 +146,11 @@ body {
   /* z-index: -1; */
   opacity: 0;
   object-fit: cover;
-  background-image: radial-gradient(
-    circle at 50% 200vh,
-    rgba(255, 214, 135, 0) 0,
-    rgba(157, 47, 106, 0.5) 90vh,
-    rgba(157, 47, 106, 0.8) 120vh,
-    rgba(32, 31, 66, 0) 150vh
-  );
+  background-image: radial-gradient(circle at 50% 200vh,
+      rgba(255, 214, 135, 0) 0,
+      rgba(157, 47, 106, 0.5) 90vh,
+      rgba(157, 47, 106, 0.8) 120vh,
+      rgba(32, 31, 66, 0) 150vh);
   -webkit-text-fill-color: transparent;
   font-size: 6rem;
   background-clip: text;
@@ -165,7 +160,8 @@ body {
   justify-content: center;
   align-items: flex-start;
   text-align: left;
-  padding: 0 2rem; /* mobile */
+  padding: 0 2rem;
+  /* mobile */
   visibility: hidden;
 }
 
@@ -221,12 +217,10 @@ body {
   min-height: 100vh;
   position: relative;
   overflow: hidden;
-  background: radial-gradient(
-    circle at 50% 50%,
-    rgb(35, 18, 48) 0%,
-    rgb(22, 14, 30) 40%,
-    rgb(12, 10, 16) 100%
-  );
+  background: radial-gradient(circle at 50% 50%,
+      rgb(35, 18, 48) 0%,
+      rgb(22, 14, 30) 40%,
+      rgb(12, 10, 16) 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -271,7 +265,8 @@ body {
   will-change: transform, opacity;
   transform-style: preserve-3d;
   transition: filter 0.3s ease;
-  pointer-events: none; /* Let animations guide the hover behavior */
+  pointer-events: none;
+  /* Let animations guide the hover behavior */
 }
 
 /* Enable pointer events on card inner for interactions */
@@ -307,7 +302,7 @@ body {
   object-fit: cover;
   border-radius: 6px;
   background: #050505;
-  box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .card-caption {
@@ -327,12 +322,10 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(255, 255, 255, 0) 50%,
-    rgba(0, 0, 0, 0.03) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0) 50%,
+      rgba(0, 0, 0, 0.03) 100%);
   pointer-events: none;
   z-index: 2;
 }
@@ -355,18 +348,18 @@ body {
     font-size: 3.5rem;
     margin-bottom: 3.5rem;
   }
-  
+
   .stack-container {
     max-width: 520px;
     height: 56vh;
     min-height: 420px;
   }
-  
+
   .card-caption {
     font-size: 2rem;
     margin-top: 12px;
   }
-  
+
   .stack-card .card-inner {
     padding: 16px 16px 54px 16px;
   }
@@ -388,11 +381,9 @@ body {
   min-height: 100vh;
   position: relative;
   overflow: hidden;
-  background: radial-gradient(
-    circle at 50% 50%,
-    rgb(20, 12, 28) 0%,
-    rgb(10, 8, 16) 100%
-  );
+  background: radial-gradient(circle at 50% 50%,
+      rgb(20, 12, 28) 0%,
+      rgb(10, 8, 16) 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -439,6 +430,7 @@ body {
   .highlight-image-container {
     padding: 18px 18px 68px 18px;
   }
+
   .highlight-caption {
     font-size: 2.2rem;
     margin-top: 22px;
@@ -495,9 +487,11 @@ body {
   width: 100%;
   position: relative;
   transform-origin: 50% 50%;
-  transform: scale(1.7) rotate(-10deg); /* Initial animation offset */
+  transform: scale(1.7) rotate(-10deg);
+  /* Initial animation offset */
   will-change: transform;
-  visibility: hidden; /* Controlled by script.js after mask removes */
+  visibility: hidden;
+  /* Controlled by script.js after mask removes */
   background-color: #000000;
 }
 
@@ -594,15 +588,16 @@ body {
 
 .character-layer {
   position: absolute;
-  bottom: -150%;
+  bottom: 0;
   left: 50%;
-  transform: translate(-50%, 0) scale(3) rotate(-20deg);
+  transform: translate(-50%, 100%) scale(3) rotate(-20deg);
   transform-origin: 50% 100%;
-  width: 100%;
-  height: 100%;
+  width: auto;
+  height: auto;
   object-fit: contain;
   will-change: transform;
   z-index: 3;
+  max-width: 100%;
 }
 
 /* Giant GTA Title Text */
@@ -669,8 +664,13 @@ body {
 }
 
 @keyframes bounceDown {
-  from { transform: translateY(0); }
-  to { transform: translateY(8px); }
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(8px);
+  }
 }
 
 .scroll-down-text {
@@ -786,69 +786,115 @@ body {
   .landing-navbar {
     padding: 2.5rem;
   }
+
   .landing-logo {
     gap: 1.5rem;
   }
+
   .landing-logo-lines {
     gap: 5px;
   }
+
   .logo-line {
     height: 10px;
   }
-  .line-long { width: 60px; }
-  .line-medium { width: 38px; }
-  .line-short { width: 22px; }
-  .rockstar-text { font-size: 2.8rem; }
-  
-  .gta-logo-text { top: 8%; }
-  .gta-logo-text h1 { font-size: 9.5rem; }
-  .text-grand { margin-left: -7rem !important; }
-  .text-theft { margin-left: 4rem !important; }
-  .text-auto { margin-left: -7rem !important; }
-  
+
+  .line-long {
+    width: 60px;
+  }
+
+  .line-medium {
+    width: 38px;
+  }
+
+  .line-short {
+    width: 22px;
+  }
+
+  .rockstar-text {
+    font-size: 2.8rem;
+  }
+
+  .gta-logo-text {
+    top: 8%;
+  }
+
+  .gta-logo-text h1 {
+    font-size: 9.5rem;
+  }
+
+  .text-grand {
+    margin-left: -7rem !important;
+  }
+
+  .text-theft {
+    margin-left: 4rem !important;
+  }
+
+  .text-auto {
+    margin-left: -7rem !important;
+  }
+
   .landing-bottom-bar {
     padding: 3.5rem 2.5rem;
   }
+
   .scroll-down-text {
     font-size: 1.05rem;
   }
+
   .ps5-logo-icon {
     height: 52px;
   }
 }
 
 @media (min-width: 1024px) {
-  .gta-logo-text h1 { font-size: 11.5rem; }
-  .text-grand { margin-left: -10rem !important; }
-  .text-theft { margin-left: 7rem !important; }
-  .text-auto { margin-left: -10rem !important; }
-  
+  .gta-logo-text h1 {
+    font-size: 11.5rem;
+  }
+
+  .text-grand {
+    margin-left: -10rem !important;
+  }
+
+  .text-theft {
+    margin-left: 7rem !important;
+  }
+
+  .text-auto {
+    margin-left: -10rem !important;
+  }
+
   .not-hunting-container {
     flex-direction: row;
     justify-content: space-between;
     height: 80vh;
   }
+
   .not-hunting-image-side {
     width: 50%;
     height: 100%;
   }
+
   .not-hunting-photo {
     max-width: 90%;
     transform: scale(1.1);
   }
+
   .not-hunting-content-side {
     width: 42%;
   }
+
   .not-hunting-title {
     font-size: 5.5rem;
   }
+
   .not-hunting-text {
     font-size: 1.15rem;
   }
+
   .download-button {
     font-size: 1.8rem;
     padding: 0.75rem 2.5rem;
   }
 }
-
-
